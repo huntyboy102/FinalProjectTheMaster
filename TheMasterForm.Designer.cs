@@ -32,7 +32,7 @@ namespace FinalProjectTheMaster
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TheMasterForm));
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.menuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.menuFileNew = new System.Windows.Forms.ToolStripMenuItem();
             this.menuFileOpen = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,31 +42,34 @@ namespace FinalProjectTheMaster
             this.menuFileSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.menuFileExit = new System.Windows.Forms.ToolStripMenuItem();
             this.menuEdit = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuEditCut = new System.Windows.Forms.ToolStripMenuItem();
             this.menuEditCopy = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuEditCut = new System.Windows.Forms.ToolStripMenuItem();
             this.menuEditPaste = new System.Windows.Forms.ToolStripMenuItem();
             this.menuEditSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.menuEditSelectAll = new System.Windows.Forms.ToolStripMenuItem();
             this.menuWindow = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuWindowOpenNotepadNegative = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuWindowCascade = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuWindowTileVertical = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuWindowTileHorizontal = new System.Windows.Forms.ToolStripMenuItem();
             this.menuWindowOpenCarInventory = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuWindowOpenNewNotepadNegative = new System.Windows.Forms.ToolStripMenuItem();
             this.menuHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.menuHelpAbout = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // menuStrip
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuFile,
             this.menuEdit,
             this.menuWindow,
             this.menuHelp});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(713, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip.Name = "menuStrip";
+            this.menuStrip.Size = new System.Drawing.Size(937, 24);
+            this.menuStrip.TabIndex = 1;
+            this.menuStrip.Text = "menuStrip1";
             // 
             // menuFile
             // 
@@ -143,15 +146,6 @@ namespace FinalProjectTheMaster
             this.menuEdit.Size = new System.Drawing.Size(39, 20);
             this.menuEdit.Text = "&Edit";
             // 
-            // menuEditCut
-            // 
-            this.menuEditCut.Image = ((System.Drawing.Image)(resources.GetObject("menuEditCut.Image")));
-            this.menuEditCut.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.menuEditCut.Name = "menuEditCut";
-            this.menuEditCut.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.menuEditCut.Size = new System.Drawing.Size(143, 22);
-            this.menuEditCut.Text = "Cu&t";
-            // 
             // menuEditCopy
             // 
             this.menuEditCopy.Image = ((System.Drawing.Image)(resources.GetObject("menuEditCopy.Image")));
@@ -160,6 +154,17 @@ namespace FinalProjectTheMaster
             this.menuEditCopy.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
             this.menuEditCopy.Size = new System.Drawing.Size(144, 22);
             this.menuEditCopy.Text = "&Copy";
+            this.menuEditCopy.Click += new System.EventHandler(this.CopyClick);
+            // 
+            // menuEditCut
+            // 
+            this.menuEditCut.Image = ((System.Drawing.Image)(resources.GetObject("menuEditCut.Image")));
+            this.menuEditCut.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.menuEditCut.Name = "menuEditCut";
+            this.menuEditCut.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
+            this.menuEditCut.Size = new System.Drawing.Size(144, 22);
+            this.menuEditCut.Text = "Cu&t";
+            this.menuEditCut.Click += new System.EventHandler(this.CutClick);
             // 
             // menuEditPaste
             // 
@@ -167,40 +172,67 @@ namespace FinalProjectTheMaster
             this.menuEditPaste.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.menuEditPaste.Name = "menuEditPaste";
             this.menuEditPaste.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.menuEditPaste.Size = new System.Drawing.Size(143, 22);
+            this.menuEditPaste.Size = new System.Drawing.Size(144, 22);
             this.menuEditPaste.Text = "&Paste";
+            this.menuEditPaste.Click += new System.EventHandler(this.PasteClick);
             // 
             // menuEditSeparator
             // 
             this.menuEditSeparator.Name = "menuEditSeparator";
-            this.menuEditSeparator.Size = new System.Drawing.Size(140, 6);
+            this.menuEditSeparator.Size = new System.Drawing.Size(141, 6);
             // 
             // menuEditSelectAll
             // 
             this.menuEditSelectAll.Name = "menuEditSelectAll";
-            this.menuEditSelectAll.Size = new System.Drawing.Size(143, 22);
+            this.menuEditSelectAll.Size = new System.Drawing.Size(144, 22);
             this.menuEditSelectAll.Text = "Select &All";
+            this.menuEditSelectAll.Click += new System.EventHandler(this.SelectAllClick);
             // 
             // menuWindow
             // 
             this.menuWindow.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuWindowCascade,
+            this.menuWindowTileVertical,
+            this.menuWindowTileHorizontal,
             this.menuWindowOpenCarInventory,
-            this.menuWindowOpenNotepadNegative});
+            this.menuWindowOpenNewNotepadNegative});
             this.menuWindow.Name = "menuWindow";
             this.menuWindow.Size = new System.Drawing.Size(63, 20);
             this.menuWindow.Text = "&Window";
             // 
-            // menuWindowOpenNotepadNegative
+            // menuWindowCascade
             // 
-            this.menuWindowOpenNotepadNegative.Name = "menuWindowOpenNotepadNegative";
-            this.menuWindowOpenNotepadNegative.Size = new System.Drawing.Size(202, 22);
-            this.menuWindowOpenNotepadNegative.Text = "Open &Notepad Negative";
+            this.menuWindowCascade.Name = "menuWindowCascade";
+            this.menuWindowCascade.Size = new System.Drawing.Size(229, 22);
+            this.menuWindowCascade.Text = "Cascade Window";
+            this.menuWindowCascade.Click += new System.EventHandler(this.WindowCascade);
+            // 
+            // menuWindowTileVertical
+            // 
+            this.menuWindowTileVertical.Name = "menuWindowTileVertical";
+            this.menuWindowTileVertical.Size = new System.Drawing.Size(229, 22);
+            this.menuWindowTileVertical.Text = "Tile Window Vertically";
+            this.menuWindowTileVertical.Click += new System.EventHandler(this.WindowTileVertically);
+            // 
+            // menuWindowTileHorizontal
+            // 
+            this.menuWindowTileHorizontal.Name = "menuWindowTileHorizontal";
+            this.menuWindowTileHorizontal.Size = new System.Drawing.Size(229, 22);
+            this.menuWindowTileHorizontal.Text = "Tile Window Horizontally";
+            this.menuWindowTileHorizontal.Click += new System.EventHandler(this.WindowTileHorizontal);
             // 
             // menuWindowOpenCarInventory
             // 
             this.menuWindowOpenCarInventory.Name = "menuWindowOpenCarInventory";
-            this.menuWindowOpenCarInventory.Size = new System.Drawing.Size(202, 22);
+            this.menuWindowOpenCarInventory.Size = new System.Drawing.Size(229, 22);
             this.menuWindowOpenCarInventory.Text = "Open &Car Inventory";
+            // 
+            // menuWindowOpenNewNotepadNegative
+            // 
+            this.menuWindowOpenNewNotepadNegative.Name = "menuWindowOpenNewNotepadNegative";
+            this.menuWindowOpenNewNotepadNegative.Size = new System.Drawing.Size(229, 22);
+            this.menuWindowOpenNewNotepadNegative.Text = "Open New &Notepad Negative";
+            this.menuWindowOpenNewNotepadNegative.Click += new System.EventHandler(this.WindowNewNotepadNegative);
             // 
             // menuHelp
             // 
@@ -213,20 +245,20 @@ namespace FinalProjectTheMaster
             // menuHelpAbout
             // 
             this.menuHelpAbout.Name = "menuHelpAbout";
-            this.menuHelpAbout.Size = new System.Drawing.Size(122, 22);
+            this.menuHelpAbout.Size = new System.Drawing.Size(116, 22);
             this.menuHelpAbout.Text = "&About...";
             // 
             // TheMasterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(713, 504);
-            this.Controls.Add(this.menuStrip1);
+            this.ClientSize = new System.Drawing.Size(937, 532);
+            this.Controls.Add(this.menuStrip);
             this.IsMdiContainer = true;
             this.Name = "TheMasterForm";
             this.Text = "Master Form";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -234,7 +266,7 @@ namespace FinalProjectTheMaster
 
         #endregion
         private System.Windows.Forms.ToolTip toolTip;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem menuFile;
         private System.Windows.Forms.ToolStripMenuItem menuFileNew;
         private System.Windows.Forms.ToolStripMenuItem menuFileOpen;
@@ -250,7 +282,7 @@ namespace FinalProjectTheMaster
         private System.Windows.Forms.ToolStripSeparator menuEditSeparator;
         private System.Windows.Forms.ToolStripMenuItem menuEditSelectAll;
         private System.Windows.Forms.ToolStripMenuItem menuWindow;
-        private System.Windows.Forms.ToolStripMenuItem menuWindowOpenNotepadNegative;
+        private System.Windows.Forms.ToolStripMenuItem menuWindowOpenNewNotepadNegative;
         private System.Windows.Forms.ToolStripMenuItem menuWindowOpenCarInventory;
         private System.Windows.Forms.ToolStripMenuItem menuHelp;
         private System.Windows.Forms.ToolStripMenuItem menuHelpAbout;
@@ -262,6 +294,9 @@ namespace FinalProjectTheMaster
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuWindowTileVertical;
+        private System.Windows.Forms.ToolStripMenuItem menuWindowTileHorizontal;
+        private System.Windows.Forms.ToolStripMenuItem menuWindowCascade;
     }
 }
 
