@@ -47,7 +47,6 @@ namespace CustomerViewer
             this.columnHeaderFirstName = new System.Windows.Forms.ColumnHeader();
             this.columnHeaderLastName = new System.Windows.Forms.ColumnHeader();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.buttonSave = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // comboBoxTitle
@@ -143,19 +142,19 @@ namespace CustomerViewer
             // 
             // buttonExit
             // 
-            this.buttonExit.Location = new System.Drawing.Point(252, 385);
+            this.buttonExit.Location = new System.Drawing.Point(240, 382);
             this.buttonExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(82, 22);
             this.buttonExit.TabIndex = 11;
-            this.buttonExit.Text = "E&xit";
+            this.buttonExit.Text = "&Close";
             this.toolTip.SetToolTip(this.buttonExit, "Click to exit the application");
             this.buttonExit.UseVisualStyleBackColor = true;
             this.buttonExit.Click += new System.EventHandler(this.ButtonExitClick);
             // 
             // buttonReset
             // 
-            this.buttonReset.Location = new System.Drawing.Point(85, 385);
+            this.buttonReset.Location = new System.Drawing.Point(124, 382);
             this.buttonReset.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonReset.Name = "buttonReset";
             this.buttonReset.Size = new System.Drawing.Size(82, 22);
@@ -167,7 +166,7 @@ namespace CustomerViewer
             // 
             // buttonEnter
             // 
-            this.buttonEnter.Location = new System.Drawing.Point(0, 384);
+            this.buttonEnter.Location = new System.Drawing.Point(12, 382);
             this.buttonEnter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonEnter.Name = "buttonEnter";
             this.buttonEnter.Size = new System.Drawing.Size(82, 22);
@@ -220,26 +219,13 @@ namespace CustomerViewer
             this.columnHeaderLastName.Text = "Last Name";
             this.columnHeaderLastName.Width = 120;
             // 
-            // buttonSave
-            // 
-            this.buttonSave.Location = new System.Drawing.Point(169, 384);
-            this.buttonSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(82, 22);
-            this.buttonSave.TabIndex = 12;
-            this.buttonSave.Text = "&Save";
-            this.toolTip.SetToolTip(this.buttonSave, "Click to exit the application");
-            this.buttonSave.UseVisualStyleBackColor = true;
-            this.buttonSave.Click += new System.EventHandler(this.buttonSaveClick);
-            // 
             // formCustomerEntry
             // 
             this.AcceptButton = this.buttonEnter;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonReset;
-            this.ClientSize = new System.Drawing.Size(334, 415);
-            this.Controls.Add(this.buttonSave);
+            this.ClientSize = new System.Drawing.Size(334, 411);
             this.Controls.Add(this.listViewEntries);
             this.Controls.Add(this.buttonEnter);
             this.Controls.Add(this.buttonReset);
@@ -254,10 +240,13 @@ namespace CustomerViewer
             this.Controls.Add(this.labelTitle);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(350, 450);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(350, 450);
             this.Name = "formCustomerEntry";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Customer Entry";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CustomerEntryClosing);
             this.Load += new System.EventHandler(this.FormLoad);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -283,6 +272,5 @@ namespace CustomerViewer
         private System.Windows.Forms.ColumnHeader columnHeaderFirstName;
         private System.Windows.Forms.ColumnHeader columnHeaderLastName;
         private System.Windows.Forms.ToolTip toolTip;
-        private System.Windows.Forms.Button buttonSave;
     }
 }

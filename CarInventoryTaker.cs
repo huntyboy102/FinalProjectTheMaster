@@ -10,15 +10,16 @@ using System.Windows.Forms;
 
 namespace Lab4InventoryForCars
 {
-    public partial class FormCarInventory : Form
+    public partial class formCarInventory : Form
     {
         // Declare the car list.
         private List<Car> carList = new List<Car>();
         // Declare class level variables.
         private int selectedIndex = -1;
 
+        private static formCarInventory instance;
 
-        public FormCarInventory()
+        public formCarInventory()
         {
             InitializeComponent();
         }
@@ -176,6 +177,28 @@ namespace Lab4InventoryForCars
 
             // Return the isValid value.
             return isValid;
+        }
+
+        public static formCarInventory Instance
+        {
+            get
+            {
+                // If there is no existing instance of the customer entry form.
+                if (instance == null)
+                {
+                    // Create a new instance.
+                    instance = new formCarInventory();
+                }
+
+                // Return either the existing or new instance.
+                return instance;
+            }
+        }
+
+        private void CarInventoryClosing(object sender, FormClosingEventArgs e)
+        {
+            // Make the customer entry instance null.
+            instance = null;
         }
     }
 }

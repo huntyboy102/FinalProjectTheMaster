@@ -1,7 +1,7 @@
 ﻿
 namespace Lab4InventoryForCars
 {
-    partial class FormCarInventory
+    partial class formCarInventory
     {
         /// <summary>
         ///  Required designer variable.
@@ -34,9 +34,6 @@ namespace Lab4InventoryForCars
             this.labelModel = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.comboBoxMake = new System.Windows.Forms.ComboBox();
-            this.buttonExit = new System.Windows.Forms.Button();
-            this.buttonReset = new System.Windows.Forms.Button();
-            this.buttonEnter = new System.Windows.Forms.Button();
             this.textBoxPrice = new System.Windows.Forms.TextBox();
             this.textBoxModel = new System.Windows.Forms.TextBox();
             this.checkBoxNewStatus = new System.Windows.Forms.CheckBox();
@@ -52,6 +49,9 @@ namespace Lab4InventoryForCars
             this.columnHeaderModel = new System.Windows.Forms.ColumnHeader();
             this.columnHeaderYear = new System.Windows.Forms.ColumnHeader();
             this.columnHeaderPrice = new System.Windows.Forms.ColumnHeader();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownYear)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,39 +90,6 @@ namespace Lab4InventoryForCars
             this.comboBoxMake.Size = new System.Drawing.Size(121, 23);
             this.comboBoxMake.TabIndex = 1;
             this.toolTip1.SetToolTip(this.comboBoxMake, "The ComboBox used to select the make of the car");
-            // 
-            // buttonExit
-            // 
-            this.buttonExit.Location = new System.Drawing.Point(358, 503);
-            this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(75, 23);
-            this.buttonExit.TabIndex = 13;
-            this.buttonExit.Text = "E&xit";
-            this.toolTip1.SetToolTip(this.buttonExit, "Closes the program");
-            this.buttonExit.UseVisualStyleBackColor = true;
-            this.buttonExit.Click += new System.EventHandler(this.buttonExitClick);
-            // 
-            // buttonReset
-            // 
-            this.buttonReset.Location = new System.Drawing.Point(277, 503);
-            this.buttonReset.Name = "buttonReset";
-            this.buttonReset.Size = new System.Drawing.Size(75, 23);
-            this.buttonReset.TabIndex = 12;
-            this.buttonReset.Text = "&Reset";
-            this.toolTip1.SetToolTip(this.buttonReset, "Resets the program");
-            this.buttonReset.UseVisualStyleBackColor = true;
-            this.buttonReset.Click += new System.EventHandler(this.buttonResetClick);
-            // 
-            // buttonEnter
-            // 
-            this.buttonEnter.Location = new System.Drawing.Point(196, 503);
-            this.buttonEnter.Name = "buttonEnter";
-            this.buttonEnter.Size = new System.Drawing.Size(75, 23);
-            this.buttonEnter.TabIndex = 11;
-            this.buttonEnter.Text = "&Enter";
-            this.toolTip1.SetToolTip(this.buttonEnter, "Adds car to list viewer");
-            this.buttonEnter.UseVisualStyleBackColor = true;
-            this.buttonEnter.Click += new System.EventHandler(this.buttonEnterClick);
             // 
             // textBoxPrice
             // 
@@ -206,11 +173,11 @@ namespace Lab4InventoryForCars
             // textBoxResults
             // 
             this.textBoxResults.Enabled = false;
-            this.textBoxResults.Location = new System.Drawing.Point(3, 363);
+            this.textBoxResults.Location = new System.Drawing.Point(3, 314);
             this.textBoxResults.Multiline = true;
             this.textBoxResults.Name = "textBoxResults";
             this.textBoxResults.ReadOnly = true;
-            this.textBoxResults.Size = new System.Drawing.Size(430, 134);
+            this.textBoxResults.Size = new System.Drawing.Size(430, 112);
             this.textBoxResults.TabIndex = 7;
             // 
             // listViewCarDetails
@@ -226,11 +193,11 @@ namespace Lab4InventoryForCars
             this.listViewCarDetails.FullRowSelect = true;
             this.listViewCarDetails.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listViewCarDetails.HideSelection = false;
-            this.listViewCarDetails.Location = new System.Drawing.Point(3, 171);
+            this.listViewCarDetails.Location = new System.Drawing.Point(3, 157);
             this.listViewCarDetails.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listViewCarDetails.MultiSelect = false;
             this.listViewCarDetails.Name = "listViewCarDetails";
-            this.listViewCarDetails.Size = new System.Drawing.Size(430, 186);
+            this.listViewCarDetails.Size = new System.Drawing.Size(430, 152);
             this.listViewCarDetails.TabIndex = 10;
             this.listViewCarDetails.UseCompatibleStateImageBehavior = false;
             this.listViewCarDetails.View = System.Windows.Forms.View.Details;
@@ -265,18 +232,46 @@ namespace Lab4InventoryForCars
             this.columnHeaderPrice.Text = "Price";
             this.columnHeaderPrice.Width = 70;
             // 
-            // FormCarInventory
+            // button1
             // 
-            this.AcceptButton = this.buttonEnter;
+            this.button1.Location = new System.Drawing.Point(358, 432);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "E&xit";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.buttonExitClick);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(277, 432);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "&Reset";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.buttonResetClick);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(196, 432);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 11;
+            this.button3.Text = "&Enter";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.buttonEnterClick);
+            // 
+            // formCarInventory
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.buttonReset;
-            this.ClientSize = new System.Drawing.Size(436, 538);
+            this.ClientSize = new System.Drawing.Size(434, 461);
             this.Controls.Add(this.listViewCarDetails);
             this.Controls.Add(this.numericUpDownYear);
-            this.Controls.Add(this.buttonEnter);
-            this.Controls.Add(this.buttonReset);
-            this.Controls.Add(this.buttonExit);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.textBoxResults);
             this.Controls.Add(this.textBoxPrice);
             this.Controls.Add(this.checkBoxNewStatus);
@@ -288,10 +283,13 @@ namespace Lab4InventoryForCars
             this.Controls.Add(this.labelModel);
             this.Controls.Add(this.labelMake);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(450, 500);
             this.MinimizeBox = false;
-            this.Name = "FormCarInventory";
+            this.MinimumSize = new System.Drawing.Size(450, 500);
+            this.Name = "formCarInventory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Car Inventory";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CarInventoryClosing);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownYear)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -311,9 +309,6 @@ namespace Lab4InventoryForCars
         private System.Windows.Forms.CheckBox checkBoxNewStatus;
         private System.Windows.Forms.TextBox textBoxPrice;
         private System.Windows.Forms.TextBox textBoxResults;
-        private System.Windows.Forms.Button buttonExit;
-        private System.Windows.Forms.Button buttonReset;
-        private System.Windows.Forms.Button buttonEnter;
         private System.Windows.Forms.NumericUpDown numericUpDownYear;
         private System.Windows.Forms.ListView listViewCarDetails;
         private System.Windows.Forms.ColumnHeader columnHeaderNewStatus;
@@ -322,6 +317,9 @@ namespace Lab4InventoryForCars
         private System.Windows.Forms.ColumnHeader columnHeaderModel;
         private System.Windows.Forms.ColumnHeader columnHeaderYear;
         private System.Windows.Forms.ColumnHeader columnHeaderPrice;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
 

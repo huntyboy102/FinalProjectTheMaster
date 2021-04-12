@@ -51,8 +51,10 @@ namespace FinalProjectTheMaster
             this.menuWindowCascade = new System.Windows.Forms.ToolStripMenuItem();
             this.menuWindowTileVertical = new System.Windows.Forms.ToolStripMenuItem();
             this.menuWindowTileHorizontal = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuWindowSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.menuWindowOpenCarInventory = new System.Windows.Forms.ToolStripMenuItem();
             this.menuWindowOpenNewNotepadNegative = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuWindowOpenCustomerEntry = new System.Windows.Forms.ToolStripMenuItem();
             this.menuHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.menuHelpAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
@@ -93,6 +95,7 @@ namespace FinalProjectTheMaster
             this.menuFileNew.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
             this.menuFileNew.Size = new System.Drawing.Size(146, 22);
             this.menuFileNew.Text = "&New";
+            this.menuFileNew.Click += new System.EventHandler(this.FileNew);
             // 
             // menuFileOpen
             // 
@@ -102,6 +105,7 @@ namespace FinalProjectTheMaster
             this.menuFileOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
             this.menuFileOpen.Size = new System.Drawing.Size(146, 22);
             this.menuFileOpen.Text = "&Open";
+            this.menuFileOpen.Click += new System.EventHandler(this.OpenFile);
             // 
             // menuFileSeparator
             // 
@@ -116,12 +120,14 @@ namespace FinalProjectTheMaster
             this.menuFileSave.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
             this.menuFileSave.Size = new System.Drawing.Size(146, 22);
             this.menuFileSave.Text = "&Save";
+            this.menuFileSave.Click += new System.EventHandler(this.SaveClick);
             // 
             // menuFileSaveAs
             // 
             this.menuFileSaveAs.Name = "menuFileSaveAs";
             this.menuFileSaveAs.Size = new System.Drawing.Size(146, 22);
             this.menuFileSaveAs.Text = "Save &As";
+            this.menuFileSaveAs.Click += new System.EventHandler(this.FileSaveAs);
             // 
             // menuFileSeparator1
             // 
@@ -194,8 +200,10 @@ namespace FinalProjectTheMaster
             this.menuWindowCascade,
             this.menuWindowTileVertical,
             this.menuWindowTileHorizontal,
+            this.menuWindowSeparator,
             this.menuWindowOpenCarInventory,
-            this.menuWindowOpenNewNotepadNegative});
+            this.menuWindowOpenNewNotepadNegative,
+            this.menuWindowOpenCustomerEntry});
             this.menuWindow.Name = "menuWindow";
             this.menuWindow.Size = new System.Drawing.Size(63, 20);
             this.menuWindow.Text = "&Window";
@@ -221,11 +229,17 @@ namespace FinalProjectTheMaster
             this.menuWindowTileHorizontal.Text = "Tile Window Horizontally";
             this.menuWindowTileHorizontal.Click += new System.EventHandler(this.WindowTileHorizontal);
             // 
+            // menuWindowSeparator
+            // 
+            this.menuWindowSeparator.Name = "menuWindowSeparator";
+            this.menuWindowSeparator.Size = new System.Drawing.Size(226, 6);
+            // 
             // menuWindowOpenCarInventory
             // 
             this.menuWindowOpenCarInventory.Name = "menuWindowOpenCarInventory";
             this.menuWindowOpenCarInventory.Size = new System.Drawing.Size(229, 22);
             this.menuWindowOpenCarInventory.Text = "Open &Car Inventory";
+            this.menuWindowOpenCarInventory.Click += new System.EventHandler(this.WindowNewCarInventory);
             // 
             // menuWindowOpenNewNotepadNegative
             // 
@@ -233,6 +247,13 @@ namespace FinalProjectTheMaster
             this.menuWindowOpenNewNotepadNegative.Size = new System.Drawing.Size(229, 22);
             this.menuWindowOpenNewNotepadNegative.Text = "Open New &Notepad Negative";
             this.menuWindowOpenNewNotepadNegative.Click += new System.EventHandler(this.WindowNewNotepadNegative);
+            // 
+            // menuWindowOpenCustomerEntry
+            // 
+            this.menuWindowOpenCustomerEntry.Name = "menuWindowOpenCustomerEntry";
+            this.menuWindowOpenCustomerEntry.Size = new System.Drawing.Size(229, 22);
+            this.menuWindowOpenCustomerEntry.Text = "Open Customer Entry";
+            this.menuWindowOpenCustomerEntry.Click += new System.EventHandler(this.WindowOpenCustomerEntry);
             // 
             // menuHelp
             // 
@@ -297,6 +318,8 @@ namespace FinalProjectTheMaster
         private System.Windows.Forms.ToolStripMenuItem menuWindowTileVertical;
         private System.Windows.Forms.ToolStripMenuItem menuWindowTileHorizontal;
         private System.Windows.Forms.ToolStripMenuItem menuWindowCascade;
+        private System.Windows.Forms.ToolStripMenuItem menuWindowOpenCustomerEntry;
+        private System.Windows.Forms.ToolStripSeparator menuWindowSeparator;
     }
 }
 

@@ -28,6 +28,8 @@ namespace CustomerViewer
         // This is being used to simplify a few reference to indexes.
         private int selectedIndex = -1;
 
+        private static formCustomerEntry instance;
+
         public formCustomerEntry()
         {
             InitializeComponent();
@@ -104,7 +106,7 @@ namespace CustomerViewer
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void buttonSaveClick(object sender, EventArgs e)
+        public void ButtonSaveClick(object sender, EventArgs e)
         {
             // Declare a default file path that the file can be saved to.
             string filePath = "List" + DateTime.Now.ToString("yyyyMMdd") + ".txt";
@@ -139,7 +141,7 @@ namespace CustomerViewer
                 MessageBox.Show("Save operation cancelled.", "Save Cancelled", MessageBoxButtons.OK);
             }
         }
-        
+
 
         /// <summary>
         /// Me close form.
@@ -186,7 +188,18 @@ namespace CustomerViewer
             }
         }
 
+        /// <summary>
+        /// When the form closes make the instance null.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CustomerEntryClosing(object sender, FormClosingEventArgs e)
+        {
+            // Make the customer entry instance null.
+            instance = null;
+        }
         #endregion
+
         #region "Functions"
 
         /// <summary>
@@ -274,6 +287,24 @@ namespace CustomerViewer
             return isValid;
         }
 
+        /// <summary>
+        /// This property returns a single instance of the customer entry form.
+        /// </summary>
+        public static formCustomerEntry Instance
+        {
+            get
+            {
+                // If there is no existing instance of the customer entry form.
+                if (instance == null)
+                {
+                    // Create a new instance.
+                    instance = new formCustomerEntry();
+                }
+
+                // Return either the existing or new instance.
+                return instance;
+            }
+        }
         #endregion
     }
 }
