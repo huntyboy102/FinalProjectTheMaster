@@ -57,6 +57,11 @@ namespace FinalProjectTheMaster
             customerEntryInstance.Focus();
         }
 
+        /// <summary>
+        /// This assigns an instance of the car inventory taker form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void WindowOpenCarInventory(object sender, EventArgs e)
         {
             // Create (or call) the customer entry instance.
@@ -70,12 +75,20 @@ namespace FinalProjectTheMaster
             carInventoryInstance.Focus();
         }
 
+        /// <summary>
+        /// This assigns an instance of the average units shipped form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void WindowOpenAverageUnitsShipped(object sender, EventArgs e)
         {
+            // Create (or call) the customer entry instance.
             formAvgShippedUnit avgShippedUnitsInstance = formAvgShippedUnit.Instance;
 
+            // Assign this child window an MdiParent
             avgShippedUnitsInstance.MdiParent = this;
 
+            // Display the existing or created instance.
             avgShippedUnitsInstance.Show();
             avgShippedUnitsInstance.Focus();
         }
@@ -87,21 +100,25 @@ namespace FinalProjectTheMaster
         /// <param name="e"></param>
         private void CopyClick(object sender, EventArgs e)
         {
-            // 
+            // If there is MdiChildren.
             if (this.MdiChildren.Length > 0)
             {
+                // If the child is notepad negative.
                 if (this.ActiveMdiChild.GetType() == typeof(formNotepadNegative))
                 {
+                    // Call for the CopyClick function.
                     formNotepadNegative notepadNegativeInstance = (formNotepadNegative)this.ActiveMdiChild;
                     notepadNegativeInstance.CopyClick(sender, e);
                 }
                 else
                 {
+                    // Show a message box if the form is not supported in the current window.
                     MessageBox.Show("The 'Copy' operation is not supported by the current selected windows.", "Operation Not Supported");
                 }
             }
             else
             {
+                // Show a message box if there is no form open.
                 MessageBox.Show("You must open NotepadNegative in order to use the copy operation.", "Operation Not Supported");
             }
         }
@@ -113,20 +130,25 @@ namespace FinalProjectTheMaster
         /// <param name="e"></param>
         private void PasteClick(object sender, EventArgs e)
         {
+            // If there is MdiChildren.
             if (this.MdiChildren.Length > 0)
             {
+                // If the child is notepad negative.
                 if (this.ActiveMdiChild.GetType() == typeof(formNotepadNegative))
                 {
+                    // Call the PasteClick function.
                     formNotepadNegative notepadNegativeInstance = (formNotepadNegative)this.ActiveMdiChild;
                     notepadNegativeInstance.PasteClick(sender, e);
                 }
                 else
                 {
+                    // Show a message box if the form is not supported in the current window.
                     MessageBox.Show("The 'Paste' operation is not supported by the current selected windows.", "Operation Not Supported");
                 }
             }
             else
             {
+                // Show a message box if there is no form open.
                 MessageBox.Show("You must open NotepadNegative in order to use the 'Paste' operation.", "Operation Not Supported");
             }
         }
@@ -138,20 +160,25 @@ namespace FinalProjectTheMaster
         /// <param name="e"></param>
         private void CutClick(object sender, EventArgs e)
         {
+            // If there is MdiChildren.
             if (this.MdiChildren.Length > 0)
             {
+                // If the child is notepad negative.
                 if (this.ActiveMdiChild.GetType() == typeof(formNotepadNegative))
                 {
+                    // Call the CutClick function.
                     formNotepadNegative notepadNegativeInstance = (formNotepadNegative)this.ActiveMdiChild;
                     notepadNegativeInstance.CutClick(sender, e);
                 }
                 else
                 {
+                    // Show a message box if the form is not supported in the current window.
                     MessageBox.Show("The 'Cut' operation is not supported by the current selected windows.", "Operation Not Supported");
                 }
             }
             else
             {
+                // Show a message box if there is no form open.
                 MessageBox.Show("You must open NotepadNegative in order to use the 'Cut' operation.", "Operation Not Supported");
             }
         }
@@ -163,20 +190,25 @@ namespace FinalProjectTheMaster
         /// <param name="e"></param>
         private void SelectAllClick(object sender, EventArgs e)
         {
+            // If there is MdiChildren.
             if (this.MdiChildren.Length > 0)
             {
+                // If the child is notepad negative.
                 if (this.ActiveMdiChild.GetType() == typeof(formNotepadNegative))
                 {
+                    // Call the SelectAllClick function.
                     formNotepadNegative notepadNegativeInstance = (formNotepadNegative)this.ActiveMdiChild;
                     notepadNegativeInstance.SelectAllClick(sender, e);
                 }
                 else
                 {
+                    // Show a message box if the form is not supported in the current window.
                     MessageBox.Show("The 'Select All' operation is not supported by the current selected windows.", "Operation Not Supported");
                 }
             }
             else
             {
+                // Show a message box if there is no form open.
                 MessageBox.Show("You must open NotepadNegative in order to use the 'Select All' operation.", "Operation Not Supported");
             }
         }
@@ -188,25 +220,32 @@ namespace FinalProjectTheMaster
         /// <param name="e"></param>
         private void FileSaveAs(object sender, EventArgs e)
         {
+            // If there is MdiChildren.
             if (this.MdiChildren.Length > 0)
             {
+                // If the child is notepad negative.
                 if (this.ActiveMdiChild.GetType() == typeof(formNotepadNegative))
                 {
+                    // Call the FileSaveAs function.
                     formNotepadNegative notepadNegativeInstance = (formNotepadNegative)this.ActiveMdiChild;
                     notepadNegativeInstance.FileSaveAs(sender, e);
                 }
-                else if(this.ActiveMdiChild.GetType() == typeof(formCustomerEntry))
+                // If the child is CustomerEntry.
+                else if (this.ActiveMdiChild.GetType() == typeof(formCustomerEntry))
                 {
+                    // Call the ButtonSaveClick function.
                     formCustomerEntry customerEntryInstance = (formCustomerEntry)this.ActiveMdiChild;
                     customerEntryInstance.ButtonSaveClick(sender, e);
                 }
                 else
                 {
+                    // Show a message box if the form is not supported in the current window.
                     MessageBox.Show("The 'Save As' operation is not supported by the current selected windows.", "Operation Not Supported");
                 }
             }
             else
             {
+                // Show a message box if there is no form open.
                 MessageBox.Show("You must open a form in order to use the 'Save As' operation.", "Operation Not Supported");
             }
         }
@@ -218,25 +257,32 @@ namespace FinalProjectTheMaster
         /// <param name="e"></param>
         private void SaveClick(object sender, EventArgs e)
         {
+            // If there is MdiChildren.
             if (this.MdiChildren.Length > 0)
             {
+                // If the child is notepad negative.
                 if (this.ActiveMdiChild.GetType() == typeof(formNotepadNegative))
                 {
+                    // Call the SaveClick function.
                     formNotepadNegative notepadNegativeInstance = (formNotepadNegative)this.ActiveMdiChild;
                     notepadNegativeInstance.SaveClick(sender, e);
                 }
+                // If the child is Customer Entry.
                 else if (this.ActiveMdiChild.GetType() == typeof(formCustomerEntry))
                 {
+                    // Call the ButtonSaveClick function.
                     formCustomerEntry customerEntryInstance = (formCustomerEntry)this.ActiveMdiChild;
                     customerEntryInstance.ButtonSaveClick(sender, e);
                 }
                 else
                 {
+                    // Show a message box if the form is not supported in the current window.
                     MessageBox.Show("The 'Save' operation is not supported by the current selected windows.", "Operation Not Supported");
                 }
             }
             else
             {
+                // Show a message box if there is no form open.
                 MessageBox.Show("You must open a form in order to use the 'Save' operation.", "Operation Not Supported");
             }
         }
@@ -248,20 +294,25 @@ namespace FinalProjectTheMaster
         /// <param name="e"></param>
         private void FileNew(object sender, EventArgs e)
         {
+            // If there is MdiChildren.
             if (this.MdiChildren.Length > 0)
             {
+                // If the child is notepad negative.
                 if (this.ActiveMdiChild.GetType() == typeof(formNotepadNegative))
                 {
+                    // Call the FileNew function.
                     formNotepadNegative notepadNegativeInstance = (formNotepadNegative)this.ActiveMdiChild;
                     notepadNegativeInstance.FileNew(sender, e);
                 }
                 else
                 {
+                    // Show a message box if the form is not supported in the current window.
                     MessageBox.Show("The 'New' operation is not supported by the current selected windows.", "Operation Not Supported");
                 }
             }
             else
             {
+                // Show a message box if there is no form open.
                 MessageBox.Show("You must open NotepadNegative in order to use the 'New' operation.", "Operation Not Supported");
             }
         }
@@ -273,20 +324,25 @@ namespace FinalProjectTheMaster
         /// <param name="e"></param>
         private void OpenFile(object sender, EventArgs e)
         {
+            // If there is MdiChildren.
             if (this.MdiChildren.Length > 0)
             {
+                // If the child is notepad negative.
                 if (this.ActiveMdiChild.GetType() == typeof(formNotepadNegative))
                 {
+                    // Call the OpenFile function.
                     formNotepadNegative notepadNegativeInstance = (formNotepadNegative)this.ActiveMdiChild;
                     notepadNegativeInstance.OpenFile(sender, e);
                 }
                 else
                 {
+                    // Show a message box if the form is not supported in the current window.
                     MessageBox.Show("The 'Open' operation is not supported by the current selected windows.", "Operation Not Supported");
                 }
             }
             else
             {
+                // Show a message box if there is no form open.
                 MessageBox.Show("You must open NotepadNegative in order to use the 'Open' operation.", "Operation Not Supported");
             }
         }
