@@ -1,14 +1,16 @@
-﻿using CustomerViewer;
+﻿/*
+ * Name: Hunter L Praveen J-M
+ * Date: 2021-04-06
+ * Desc: This program is a master program. It features all previous labs all under one Parent form.
+ * This master form includes Praveen's Average Units Shipped, Hunter's Notepad, Hunter's car inventory taker and Hunter's Customer Entry.
+ * 
+ * Changes: Most changes have been documented on my Github. I did a lot for this lab, Praveen only supplied me with their Lab 1. Little ticked but that's ok.
+ */
+using AvgUnitsShipped;
+using CustomerViewer;
 using Lab4InventoryForCars;
 using Lab5NotepadNegative;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FinalProjectTheMaster
@@ -55,7 +57,7 @@ namespace FinalProjectTheMaster
             customerEntryInstance.Focus();
         }
 
-        private void WindowNewCarInventory(object sender, EventArgs e)
+        private void WindowOpenCarInventory(object sender, EventArgs e)
         {
             // Create (or call) the customer entry instance.
             formCarInventory carInventoryInstance = formCarInventory.Instance;
@@ -66,6 +68,16 @@ namespace FinalProjectTheMaster
             // Display the existing or created instance.
             carInventoryInstance.Show();
             carInventoryInstance.Focus();
+        }
+
+        private void WindowOpenAverageUnitsShipped(object sender, EventArgs e)
+        {
+            formAvgShippedUnit avgShippedUnitsInstance = formAvgShippedUnit.Instance;
+
+            avgShippedUnitsInstance.MdiParent = this;
+
+            avgShippedUnitsInstance.Show();
+            avgShippedUnitsInstance.Focus();
         }
 
         /// <summary>
@@ -308,5 +320,7 @@ namespace FinalProjectTheMaster
         {
             this.LayoutMdi(MdiLayout.Cascade);
         }
+
+        
     }
 }

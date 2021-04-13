@@ -57,6 +57,7 @@ namespace FinalProjectTheMaster
             this.menuWindowOpenCustomerEntry = new System.Windows.Forms.ToolStripMenuItem();
             this.menuHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.menuHelpAbout = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuWindowOpenAverageUnitsShipped = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -201,9 +202,10 @@ namespace FinalProjectTheMaster
             this.menuWindowTileVertical,
             this.menuWindowTileHorizontal,
             this.menuWindowSeparator,
+            this.menuWindowOpenAverageUnitsShipped,
             this.menuWindowOpenCarInventory,
-            this.menuWindowOpenNewNotepadNegative,
-            this.menuWindowOpenCustomerEntry});
+            this.menuWindowOpenCustomerEntry,
+            this.menuWindowOpenNewNotepadNegative});
             this.menuWindow.Name = "menuWindow";
             this.menuWindow.Size = new System.Drawing.Size(63, 20);
             this.menuWindow.Text = "&Window";
@@ -239,7 +241,7 @@ namespace FinalProjectTheMaster
             this.menuWindowOpenCarInventory.Name = "menuWindowOpenCarInventory";
             this.menuWindowOpenCarInventory.Size = new System.Drawing.Size(229, 22);
             this.menuWindowOpenCarInventory.Text = "Open &Car Inventory";
-            this.menuWindowOpenCarInventory.Click += new System.EventHandler(this.WindowNewCarInventory);
+            this.menuWindowOpenCarInventory.Click += new System.EventHandler(this.WindowOpenCarInventory);
             // 
             // menuWindowOpenNewNotepadNegative
             // 
@@ -268,6 +270,13 @@ namespace FinalProjectTheMaster
             this.menuHelpAbout.Name = "menuHelpAbout";
             this.menuHelpAbout.Size = new System.Drawing.Size(116, 22);
             this.menuHelpAbout.Text = "&About...";
+            // 
+            // menuWindowOpenAverageUnitsShipped
+            // 
+            this.menuWindowOpenAverageUnitsShipped.Name = "menuWindowOpenAverageUnitsShipped";
+            this.menuWindowOpenAverageUnitsShipped.Size = new System.Drawing.Size(229, 22);
+            this.menuWindowOpenAverageUnitsShipped.Text = "Open Average Units Shipped";
+            this.menuWindowOpenAverageUnitsShipped.Click += new System.EventHandler(this.WindowOpenAverageUnitsShipped);
             // 
             // TheMasterForm
             // 
@@ -320,6 +329,7 @@ namespace FinalProjectTheMaster
         private System.Windows.Forms.ToolStripMenuItem menuWindowCascade;
         private System.Windows.Forms.ToolStripMenuItem menuWindowOpenCustomerEntry;
         private System.Windows.Forms.ToolStripSeparator menuWindowSeparator;
+        private System.Windows.Forms.ToolStripMenuItem menuWindowOpenAverageUnitsShipped;
     }
 }
 
