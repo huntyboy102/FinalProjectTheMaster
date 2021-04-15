@@ -142,21 +142,11 @@ namespace Lab5NotepadNegative
         }
 
         /// <summary>
-        /// Close the program.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ExitClick(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        /// <summary>
         /// Click to show information about the program.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void AboutClick(object sender, EventArgs e)
+        public void AboutClick(object sender, EventArgs e)
         {
             MessageBox.Show(" NETD 2202 \n\n Lab 5 \n\n Notepad Negative Version 1.0 \n\n H. Lovering");
         }

@@ -377,6 +377,9 @@ namespace FinalProjectTheMaster
             this.LayoutMdi(MdiLayout.Cascade);
         }
 
-        
+        private void AboutClick(object sender, EventArgs e)
+        {
+            MessageBox.Show(" NETD 2202 \n\n Final Project \n\n The Master Form v1.0 \n\n H. Lovering & P. Jayasuriya mahathelge");
+        }
     }
 }
